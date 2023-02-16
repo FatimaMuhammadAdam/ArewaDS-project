@@ -214,3 +214,26 @@ def make_car_dict(manufacture, model_name, **car_info):
     return car_info
 car = make_car_dict('subaru', 'outback', color='blue', tow_package=True)
 print(car)
+#8-15. Printing Models: Put the functions for the example printing_models.py in a 
+#separate file called printing_functions.py. Write an import statement at the top 
+#of printing_models.py, and modify the file to use the imported functions.
+from printing_models import print_models as pm
+# Imports: Using a program you wrote that has one function in it, store that 
+#function in a separate file. Import the function into your main program file, and 
+#call the function using each of these approaches:
+import build_profile
+from build_profile import build_profile
+from build_profile import build_profile as bp
+import build_profile as mn
+from build_profile import *
+#-17. Styling Functions: Choose any three programs you wrote for this chapter, 
+# and make sure they follow the styling guidelines described in this section.
+def describe_city(
+    name_of_city, 
+    name_country='Iceland'
+    ):
+    print(f"{name_of_city} is in {name_country}")
+describe_city('Reyjavik', name_country='Iceland')
+describe_city('uk')
+describe_city('china')
+describe_city('Reyjavik', name_country='Nigeria')
