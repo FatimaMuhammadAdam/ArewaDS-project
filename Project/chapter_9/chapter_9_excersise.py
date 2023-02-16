@@ -4,15 +4,18 @@
 #Make an instance called restaurant from your class. 
 # Print the two attributes individually, and then call both methods.
 class Restaurant:
-    def _init_(self, restaurant_name, cuisine_type):
-        self.restuarant_name =restaurant_name
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
         self.cuisine_type = cuisine_type
-    def describe_restuarant():
-        print(f"the resturant has the following information{'restaurant_name'} and {'cuisine_type'}")
 
-    def open_restuarantant():
-        print(f"{'restuarant_name'} is open")
+    def describe_restaurant(self):
+        print(f"{self.restaurant_name} serves {self.cuisine_type} cuisine.")
 
-my_restuarant = Restaurant('stone casttle', 'asian restuarant')
-print(f"My restuarant name is {my_restuarant.restuarant_name}.")
-print(f"My restuarant type {my_restuarant.cuisine_type}.")
+    def open_restaurant(self):
+        print(f"{self.restaurant_name} is now open!")
+
+restaurant = Restaurant("Hasina Cetaring", "Nigerian")
+print(restaurant.restaurant_name)
+print(restaurant.cuisine_type)
+restaurant.describe_restaurant()
+restaurant.open_restaurant()
