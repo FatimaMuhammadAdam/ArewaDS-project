@@ -179,3 +179,39 @@ class IceCreamStand(Restaurant):
 my_icecream = IceCreamStand('banana flaour', 'vanilla flavour', ['chocolate'])
 print(my_icecream.describe_restaurant())
 print(my_icecream.display_flavours())
+
+#9-7. Admin: An administrator is a special kind of user. Write a class called 
+#Admin that inherits from the User class you wrote in Exercise 9-3 (page 162) 
+#or Exercise 9-5 (page 167). Add an attribute, privileges, that stores a list 
+#of strings like "can add post", "can delete post", "can ban user", and so on. 
+#Write a method called show_privileges() that lists the administrator’s set of 
+#privileges. Create an instance of Admin, and call your method.
+class User:
+    def __init__(self, first_name, last_name, age, location, school):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+        self.location = location
+        self.school = school
+    
+    def describe_user(self):
+        print(f"User profile for {self.first_name} {self.last_name}:")
+        print(f"school: {self.school}")
+        print(f"Location: {self.location}")
+        print(f"age: {self.age}")
+    
+    def greet_user(self):
+        print(f"Welcome back, {self.first_name}!")
+class Admin(User):
+    def __init__(self, first_name, last_name, age, location, school):
+        super().__init__(first_name, last_name, age, location, school)
+        self.privileges = ["admin can add post", "admin can delete post", "admin can ban user"]
+    
+    def show_privileges(self):
+        print("the privileges of the Administrator are:")
+        for privilege in self.privileges:
+            print(f"- {privilege}")
+
+
+admin = Admin("Fatima", "Muhammad Adam", 25, "Dutse", "Federal Universisty Dutse")
+admin.show_privileges()
