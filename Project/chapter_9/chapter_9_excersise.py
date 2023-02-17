@@ -300,3 +300,9 @@ my_tesla = ElectricCar('tesla', 'model s', 2019)
 my_tesla.battery.get_range() 
 my_tesla.battery.upgrade_battery()
 my_tesla.battery.get_range()
+
+
+#10. Imported Restaurant: Using your latest Restaurant class, store it in a module. 
+# Make a separate file that imports Restaurant. Make a Restaurant instance, 
+#and call one of Restaurant’s methods to show that the import statement is working properly.
+from restaurant import Restaurant
