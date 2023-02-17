@@ -39,12 +39,13 @@ restaurant3.describe_restaurant()
 #a personalized greeting to the user.
 #Create several instances representing different users, and call both methods for each user.
 class User:
-    def name(self, first_name, last_name, school, age, location):
+    def __init__(self, first_name, last_name, age, location, school):
         self.first_name = first_name
         self.last_name = last_name
-        self.school = school
-        self.age =age
+        self.age = age
         self.location = location
+        self.school = school
+    
     def describe_user(self):
         print(f"User profile: {self.first_name} {self.last_name} is {self.age} years old, located in {self.location}, and studing in {self.school}.")
 
@@ -66,7 +67,6 @@ user2.greet_user()
 
 user3.describe_user()
 user3.greet_user()
-
 #9-4. Number Served: Start with your program from Exercise 9-1 (page 162). 
 #Add an attribute called number_served with a default value of 0. Create an 
 #instance called restaurant from this class. Print the number of customers the 
@@ -102,3 +102,51 @@ restaurant.number_served = 16
 print(f"The restaurant has served {restaurant.number_served} customers.")
 restaurant.number_served = 20
 print(f"The restaurant has served {restaurant.number_served} customers.")
+
+#9-5. Login Attempts: Add an attribute called login_attempts to your User
+# class from Exercise 9-3 (page 162). Write a method called increment_login_attempts()
+#  that increments the value of login_attempts by 1. Write another method called reset_login_attempts() that resets the value of login_attempts
+#to 0.Make an instance of the User class and call increment_login_attempts()
+#several times. Print the value of login_attempts to make sure it was incremented 
+#properly, and then call reset_login_attempts(). Print login_attempts again to 
+#make sure it was reset to 0.
+class User:
+    def __init__(self, first_name, last_name, age, location, school):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+        self.location = location
+        self.school = school
+        self.login_attempts = 0
+    
+    def describe_user(self):
+        print(f"User profile for {self.first_name} {self.last_name}:")
+        print(f"school: {self.school}")
+        print(f"Location: {self.location}")
+        print(f"age: {self.age}")
+    
+    def greet_user(self):
+        print(f"Welcome back, {self.first_name}!")
+        
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+    
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+        
+# Creating an instance of the User class
+user = User("binta", "audu", 25, "KANO", "BUK")
+
+# Calling the increment_login_attempts() method several times
+user.increment_login_attempts()
+user.increment_login_attempts()
+user.increment_login_attempts()
+
+# Printing the value of login_attempts to make sure it was incremented properly
+print(f"Number of login attempts: {user.login_attempts}")
+
+# Calling the reset_login_attempts() method
+user.reset_login_attempts()
+
+# Printing the value of login_attempts to make sure it was reset to 0
+print(f"Number of login attempts after reset: {user.login_attempts}")
