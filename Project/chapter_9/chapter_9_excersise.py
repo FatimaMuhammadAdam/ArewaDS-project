@@ -176,6 +176,6 @@ class IceCreamStand(Restaurant):
         print("In our restuarant we sell icecream and the icecream has the following flavours")
         for flavor in self.flavors:
             print(f"\t- {flavor}")
-my_icecream = IceCreamStand( 'icecream', ['chocolate flavor','banana flavor', 'vanilla flavor'])
+my_icecream = IceCreamStand('banana flaour', 'vanilla flavour', ['chocolate'])
 print(my_icecream.describe_restaurant())
 print(my_icecream.display_flavours())
